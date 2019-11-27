@@ -12,6 +12,13 @@ def solveMaxActivities(s,f):
             i = j
 
 if __name__ == "__main__":
-    s = [1 , 3 , 0 , 5 , 8 , 5] 
-    f = [2 , 4 , 6 , 7 , 9 , 9] 
-    solveMaxActivities(s,f)
+    #s = [1 , 3 , 0 , 5 , 8 , 5] 
+    #f = [2 , 4 , 6 , 7 , 9 , 9] 
+    # s,f中f是无序的
+    s = [3, 0, 1, 5, 8, 5]
+    f = [4, 6, 2, 7, 9, 9]
+    sorted_index = sorted(range(len(f)), key=lambda x: f[x])
+    sorted_s = [s[i] for i in sorted_index]
+    sorted_f = [f[i] for i in sorted_index]
+
+    solveMaxActivities(sorted_s, sorted_f)
