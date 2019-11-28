@@ -1,4 +1,5 @@
 # encoding:utf-8
+# 求最大的活动数
 # 先对f进行从小到大的排序，然后i是start的下标，j是finish的下标，如果后一个start的时间大于等于前一个finish的时间
 # 那么后一个活动可以加入！
 
