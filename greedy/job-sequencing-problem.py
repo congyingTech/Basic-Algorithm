@@ -6,7 +6,7 @@
 #      c, 2, 20
 #      d, 3, 5
 # 那么完成顺序应该是a,c,d
-## 解决方法：
+## 解决方法：O(n^2)
 # 对profit从大到小排序，把job放在deadline-1的位置，如果deadline-1位置上没有空位，那么就继续向前找空位，如果找到的话就入座，找不到就放弃该任务。
 
 
@@ -37,5 +37,5 @@ if __name__ == "__main__":
        ['J6', 2, 100]] 
     sorted_jobs = sorted(jobs, key=lambda  x: x[2], reverse=True)
     max_deadline = max(jobs, key=lambda  x: x[1])[1]
-    max_deadline = 3
+    # max_deadline = 3
     getJobSequence(sorted_jobs, max_deadline)
