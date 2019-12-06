@@ -1,6 +1,6 @@
 # encoding:utf-8
 """
-全排列的问题
+子集+全排列混合的问题
 """
 
 class Solution(object):
