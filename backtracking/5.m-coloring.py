@@ -1,4 +1,9 @@
 # encoding:utf-8
+"""
+m着色问题
+m是可以选择着色的颜色数
+v_num是点的个数
+"""
 class Graph():
     def __init__(self, vertices):
         self.vertices = vertices
@@ -11,7 +16,7 @@ class Graph():
 
 def isSafe(v, v_num, graph, c, color):
     """
-    v是第v个点，v_num是点的个数，graph是图，即将着色的颜色，color是当前行涂的色
+    v是第v个点，v_num是点的个数，graph是图，c即将着色的颜色，color是当前行涂的色
     """
     for i in range(v_num):
         if graph[v][i] == 1 and color[i] == c:
