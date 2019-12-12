@@ -22,7 +22,12 @@ class DirectedGraph(object):
         """
         i是第i个点
         """
-        if 1 not in self.graph[i] and temp not in res:
+        if len(set(temp))<len(temp):
+            print('闭环:{}'.format(temp))
+            inner_res = temp[:]
+            res.append(inner_res)
+            return 
+        if 1 not in self.graph[i] and temp not in res :
             print(temp)
             inner_res = temp[:]
             res.append(inner_res)
@@ -41,6 +46,7 @@ if __name__ == "__main__":
     graph.add_edges(0,2)
     graph.add_edges(1,3)
     graph.add_edges(2,3)
+    graph.add_edges(2,0)
     graph.print_graph()
     temp = [0] 
     res = []
