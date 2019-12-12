@@ -17,23 +17,22 @@ class DirectedGraph(object):
                 if self.graph[i][j] == 1:
                     connect_vertices.append(j)
             print('head:{}, connect with {}'.format(i, connect_vertices))
-    # 深度搜索find path
+    # 深度搜索(backtrack)find path
     def print_path(self, i, temp, res):
         """
         i是第i个点
         """
         if 1 not in self.graph[i] and temp not in res:
             print(temp)
-            res.append(temp)
+            inner_res = temp[:]
+            res.append(inner_res)
             return
         
         for j in range(self.vertices):
             if self.graph[i][j] == 1:
-                next_index = j
                 temp.append(j)
-                self.print_path(next_index, temp, res)
-                next_index = i
-                
+                self.print_path(j, temp, res)
+                temp.pop()                
 
 if __name__ == "__main__":
     v_num = 4
