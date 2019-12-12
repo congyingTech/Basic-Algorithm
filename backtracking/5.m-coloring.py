@@ -5,6 +5,9 @@ m是可以选择着色的颜色数
 v_num是点的个数
 """
 class Graph():
+    """
+    图的邻接图的表达法
+    """
     def __init__(self, vertices):
         self.vertices = vertices
         self.graph = [[0]*self.vertices for j in range(self.vertices)]

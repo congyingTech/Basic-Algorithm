@@ -42,6 +42,9 @@ class Graph(object):
             print('\n')
 
 class Graph1(object):
+    """
+    无向图的邻接矩阵表示法
+    """
     def __init__(self, vertices):
         self.vertices = vertices
         self.graph = [[0]*self.vertices for j in range(self.vertices)]
