@@ -29,6 +29,7 @@ class Solution(object):
                 y = N-x-1
                 for left in self.allPossibleFBT(x):
                     for right in self.allPossibleFBT(y):
+                        # left 和 right 是所有建成的子树的字典，下面的操作就是和跟结点组合
                         bns = TreeNode(0)
                         bns.left = left
                         bns.right = right
