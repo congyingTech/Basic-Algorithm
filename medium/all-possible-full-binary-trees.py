@@ -13,6 +13,9 @@ class TreeNode(object):
         self.val = x
         self.left = None
         self.right = None
+    def print_tree(self):
+        # 二叉树的层序遍历
+        pass
 
 class Solution(object):
     memory_dict = {0:[], 1:[TreeNode(0)]}
