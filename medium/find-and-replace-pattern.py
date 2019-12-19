@@ -1,4 +1,8 @@
 # encoding:utf-8
+"""
+问题描述：从words中找出和pattern格式相同的word
+解决方法：分别找到pattern的两种pattern_way,如果两种pattern_way都相同，那么是同一个模式
+"""
 class Solution(object):
     def findAndReplacePattern(self, words, pattern):
         """
