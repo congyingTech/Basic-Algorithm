@@ -31,7 +31,7 @@ def solve3(n,k):
     A = [[0]*(k+1) for i in range(n+1)]
     for i in range(n+1):
         for j in range(min(k,i)+1):
-            if j==0 or i==j:
+            if j==0:
                 A[i][j] = 1
             else:
                 A[i][j] = i*A[i-1][j-1]
@@ -39,7 +39,7 @@ def solve3(n,k):
 
 if __name__ == "__main__":
     n = 10
-    k = 4
+    k = 3
     solve1(n, k)
     solve2(n, k)
     solve3(n, k)
