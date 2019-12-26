@@ -10,7 +10,7 @@
 # S(n,k)在k=n和k=1时均为1
 
 # 插入到k个partition里面，就有k*S(n-1, k)中组合
-# 所以：S(n,k) = k*S(n-1, k) + S(n-1, k-1)
+# 所以：S(n,k) = k*S(n-1, k) + S(n-1, k-1)  k<=n
 
 
 #PS:Bell Number就是n长度的list，总共有多少种分割法
