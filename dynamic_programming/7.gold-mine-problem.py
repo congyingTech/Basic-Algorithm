@@ -13,7 +13,7 @@
 def solve(n, m, gold):
     maxGold  = [[0]*m for i in range(n)]
     # 第一列被gold的第一列填充
-    # i是行，j是列，n行m列
+    # i是行，j是列，n行m列, 按列填写，因为都是从列向右边走
     for j in range(m):
         
         for i in range(n):
