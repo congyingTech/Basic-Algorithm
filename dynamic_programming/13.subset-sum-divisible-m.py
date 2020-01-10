@@ -8,6 +8,7 @@
 # 1）参与：dp[n,sum] = dp[n-1, sum-arr[n]]
 # 2）不参与：dp[n, sum] = dp[n-1, sum]
 # 边界条件：n==0，且sum>0时dp[0,sum]=False; sum==0，dp[n,0]=True
+# 简而言之，就是subset-sum-problem的变种
 
 class Solution(object):
     def solve(self, arr, m):
