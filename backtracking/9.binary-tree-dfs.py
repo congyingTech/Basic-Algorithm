@@ -51,22 +51,25 @@ class Solution1(object):
         """
         非递归的方法：用node_record存储遍历过的节点，方便进行回溯
         """
-        res = [root.val]
+        res = [root]
         node_record = [root]
         while root:
-            if root.left and root.left.val not in res:
-                res.append(root.left.val)
+            if root.left and root.left not in res:
+                res.append(root.left)
                 node_record.append(root.left)
                 root = root.left
-            elif root.right and root.right.val not in res:
-                res.append(root.right.val)
+            elif root.right and root.right not in res:
+                res.append(root.right)
                 node_record.append(root.right)
                 root = root.right
             elif node_record:
                 root = node_record.pop()
             else:
                 break
-        print(res)
+        res_val = []
+        for node in res:
+            res_val.append(node.val)
+        print(res_val)
 
 if __name__ == "__main__":
     s = Solution()
