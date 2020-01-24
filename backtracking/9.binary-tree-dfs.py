@@ -87,4 +87,4 @@ if __name__ == "__main__":
     s.dfsSolution(root)
 
     s1 = Solution1()
-    s.dfsSolution(root)
+    s1.dfsSolution(root)
