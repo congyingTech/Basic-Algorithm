@@ -1,7 +1,9 @@
 # encoding:utf-8
 """
 问题描述：合并两个上升排序的链表，使之合并后有序
-解决方案：递归的方案，非递归的方案
+解决方案：递归的方案，
+非递归的方案:先比较第一个节点，节点小的那一个作为主链表，把循环遍历另一条链表，把其中的元素插入到主链表中
+在主链表设置两个指针：mainHead/mainNext，次链表只有secondHead一个指针，做次链表单节点插入主链表的动作。
 """
 # Definition for singly-linked list.
 class ListNode(object):
