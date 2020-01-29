@@ -1,3 +1,10 @@
+# encoding:utf-8
+"""
+问题描述：反转链表
+解决方案：三个指针解决，pre，cur，next_node
+"""
+
+
 class ListNode(object):
     def __init__(self, x):
         self.val = x
