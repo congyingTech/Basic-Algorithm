@@ -41,6 +41,7 @@ if __name__ == '__main__':
     s = Solution()
     # 根左右
     preorder = [8,5,1,7,10,12]
+             # [1,5,7,8,10,12]
     root = s.bstFromPreorder(preorder)
     print(root)
     
