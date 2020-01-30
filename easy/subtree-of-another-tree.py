@@ -10,7 +10,8 @@ t= 4
   / \
  1   2
 解决方案：
-辅助函数isMatch是判断两个树结构是否完全一致，可以判断s和t是否完全一致
+辅助函数isMatch是判断两个树结构是否完全一致，可以判断s和t是否完全一致，
+判断的条件是: s.val == t.val and self.isMatch(s.left, t.left) and self.isMatch(s.right, t.right)
 或者判断s的子树（左右）是否和t一致
 """
 # Definition for a binary tree node.
