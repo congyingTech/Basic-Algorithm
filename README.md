@@ -8,6 +8,7 @@
 |data_structure|数据结构|
 |dynamic_programming|动态规划专题|
 |easy|leetcode简单题|
+|getOffer|剑指Offer专题|
 |greedy|贪心专题|
 |machine_learning|机器学习算法实现|
 |medium|leetcode中等题|
