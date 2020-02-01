@@ -11,3 +11,4 @@
 |09.copy-random-linkedlist|拷贝复杂链表|1)原复杂链表主体复制 2)复制复杂链表的灵活指针 3)把复制的链表从原链表脱离|
 |10.bst-linkedlist-transfer|将bst树转化成有序的双向链表|递归的方法就左根右的遍历:左子树调整；调整左子树与根的关系；右子树调整|
 |11.permutation|字符串全排列|回溯的思想|
+|12.times-pass-half-of-all|出现过半数以上的num|摩尔投票法：times=1，遍历num，如果出现的话times+1，不出现的话times-1，如果是times==0的话，当前数字为新的比较数字，times重置为1，直到最后的那个数字|
