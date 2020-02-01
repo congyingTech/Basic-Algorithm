@@ -9,3 +9,4 @@
 |07.level-print-binary-tree|按层打印二叉树|队列|
 |08.afteroder-level-tree-bst|根据后序遍历数组判断是不是二叉搜索树|后序遍历根左右，二叉搜索树根左<根<根右|
 |09.copy-random-linkedlist|拷贝复杂链表|1)原复杂链表主体复制 2)复制复杂链表的灵活指针 3)把复制的链表从原链表脱离|
+|10.bst-linkedlist-transfer|将bst树转化成有序的双向链表|递归的方法就左根右的遍历:左子树调整；调整左子树与根的关系；右子树调整|
