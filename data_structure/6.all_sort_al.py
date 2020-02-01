@@ -5,7 +5,33 @@
 @time: 2019/1/31
 """
 
-
+def default_quick_sort(data, left, right):
+    """
+    快速排序:每次找到一个基准，尾部先走，找到<pivot的数停下，头部再走，找到>pivot的数停下，如果i<j
+    的话，两个位置的数交换，如此这般直到i==j,记录下当前的位置，把pivot和当前位置的数交换，然后分别对左右
+    两边的子序列进行快排
+    """
+    if left > right:
+        return
+    pivot = data[left]
+    i,j = left, right
+    while i!=j:
+        while i<j and data[j]>=pivot:
+            j -= 1
+        while i<j and data[i]<=pivot:
+            i += 1
+        if i<j:
+            temp = data[i]
+            data[i] = data[j]
+            data[j] = temp
+        
+    data[left] = data[i]
+    data[i] = pivot
+    default_quick_sort(data,left, i-1)
+    default_quick_sort(data, i+1, right)
+    
+    
+        
 def default_shell_sort(data):
     """
     希尔排序——希尔排序的基本思想是在插入排序的基础上把data分组，分组的规则一般是一定步长间隔，步长间隔初始化是length/2, 后来的步长是前一个步长/2
@@ -212,6 +238,12 @@ if __name__ == "__main__":
     # for i in range(10):
     #     binary_search(data, i)
     # binary_search(data, -13532532542)
+
+    # 快速排序
+    data = random_data()
+    print 'befort sort->', data
+    default_quick_sort(data, 0, len(data)-1)
+    print 'after insert sort->', data
 
     # 插入排序
     data = random_data()
