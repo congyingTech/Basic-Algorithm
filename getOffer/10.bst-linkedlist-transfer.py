@@ -2,7 +2,7 @@
 """
 问题描述：二叉搜索树与双向链表，二叉搜索树转化成一个排序的双向链表
 解决方案：
-1）递归:把问题分解成把左子树调成双向链表，把根与左子树调成双向链表，调整右子树，把根与右子树调成双向链表
+1）递归:把问题分解成把左子树调成双向链表，把根与左(右)子树调成双向链表，调整右子树
 2）非递归：二叉搜索树的中序遍历就是从小到大的排序，用一个stack记录二叉搜索树的中序遍历，然后pop出来的节点进行连接
 """
 class TreeNode(object):
@@ -18,6 +18,7 @@ class Solution1(object):
     def transfer(self, root):
         if not root:
             return 
+        # 整理左子树
         self.transfer(root.left)
         if self.head==None and self.tail == None:
             self.head, self.tail = root, root
@@ -26,6 +27,7 @@ class Solution1(object):
             self.tail.right = root
             root.left = self.tail
             self.tail = self.tail.right
+        # 整理右子树
         self.transfer(root.right)
         return self.head
 
