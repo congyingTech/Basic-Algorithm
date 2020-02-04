@@ -14,4 +14,4 @@
 |12.times-pass-half-of-all|出现过半数以上的num|摩尔投票法：times=1，遍历num，如果出现的话times+1，不出现的话times-1，如果是times==0的话，当前数字为新的比较数字，times重置为1，直到最后的那个数字|
 |13.min-k-nums|找出k个小的数|利用最小堆的方法，每次建堆找出当前最小的元素，直到k次，时间复杂度是O(nlogk)|
 |14.max-contiunus-arr-sum|连续子数组的最大和|dp[i]表示以i为连续数组最后一个元素的最大的和，dp[i] = max(dp[i-1]+num[i], num[i])|
-||||
+|15.one-display-times|从1到n整数中1出现的次数|把从0到n的所有数分为几个部分，递归求解|
