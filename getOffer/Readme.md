@@ -20,9 +20,9 @@
 |13.min-k-nums|找出k个小的数|利用最小堆的方法，每次建堆找出当前最小的元素，直到k次，时间复杂度是O(nlogk)|2020-2-4|
 |14.max-contiunus-arr-sum|连续子数组的最大和|dp[i]表示以i为连续数组最后一个元素的最大的和，dp[i] = max(dp[i-1]+num[i], num[i])|2020-2-4|
 |\*15.one-display-times|从1到n整数中1出现的次数|把从0到n的所有数分为几个部分，递归求解|2020-2-4|
-|16.arr-to-min-num|把数组排成最小的数|技巧题，用sort(cmp=lambda x,y:int(x+y)-int(y+x))|2020-2-5|
-|\*17.ugly-num|寻找第k个丑数|思路非常巧妙，看题目解析|2020-2-5|
-|18.first-char-one-time|第一个只出现一次的字符|dict|2020-2-5|
+|16.arr-to-min-num|把数组排成最小的数|技巧题，用sort(cmp=lambda x,y:int(x+y)-int(y+x))|2020-2-4|
+|\*17.ugly-num|寻找第k个丑数|思路非常巧妙，看题目解析|2020-2-4|
+|18.first-char-one-time|第一个只出现一次的字符|dict|2020-2-4|
 |\*19.reverse-pair-in-arr|数组中的逆序对的数量|利用归并排序的特点，非常巧妙|2020-2-5|
 |20.two-list-first-common-node|两个链表的第一个公共结点|先遍历出两个链表的长度，较长的那个头指针先走一个长度差值，然后一起走，直到遇到公共结点|2020-2-5|
 |21.num-in-sortedarr-times|数字在排序数组中出现的次数|排序提醒了二分查找的方法，二分查找firstk和lastk出现的位置，然后做差值即可|2020-2-5|
