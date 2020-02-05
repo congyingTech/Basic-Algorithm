@@ -17,3 +17,5 @@
 |\*15.one-display-times|从1到n整数中1出现的次数|把从0到n的所有数分为几个部分，递归求解|
 |16.arr-to-min-num|把数组排成最小的数|技巧题，用sort(cmp=lambda x,y:int(x+y)-int(y+x))|
 |\*17.ugly-num|寻找第k个丑数|思路非常巧妙，看题目解析|
+|18.first-char-one-time|第一个只出现一次的字符|dict|
+|\*19.reverse-pair-in-arr|数组中的逆序对的数量|利用归并排序的特点，非常巧妙|
