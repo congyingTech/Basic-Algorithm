@@ -20,3 +20,4 @@
 |18.first-char-one-time|第一个只出现一次的字符|dict|
 |\*19.reverse-pair-in-arr|数组中的逆序对的数量|利用归并排序的特点，非常巧妙|
 |20.two-list-first-common-node|两个链表的第一个公共结点|先遍历出两个链表的长度，较长的那个头指针先走一个长度差值，然后一起走，直到遇到公共结点|
+|21.num-in-sortedarr-times|数字在排序数组中出现的次数|排序提醒了二分查找的方法，二分查找firstk和lastk出现的位置，然后做差值即可|
