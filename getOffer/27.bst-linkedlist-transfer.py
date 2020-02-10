@@ -40,7 +40,7 @@ class Solution1(object):
             print(head.val)
             head = head.left
 
-class Solution(object):
+class Solution2(object):
     def transfer(self, root):
         stack = [root]
         res = []
