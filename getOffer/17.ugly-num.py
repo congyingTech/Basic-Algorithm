@@ -9,7 +9,7 @@
 事实上我们不需要每次都计算前面所有丑数乘以2，3，5的结果，然后再比较大小。因为在已存在的丑数中，一定存在某个数T2，在它之前的所有数乘以2都小于已有丑数，而T2×2的结果一定大于M，同理，也存在这样的数T3，T5，我们只需要标记这三个数即可。
 
 """
-class Solution1(object):
+class Solution2(object):
     def findUglyNum(self, k):
         if k == 0:
             return 0
@@ -29,7 +29,7 @@ class Solution1(object):
             i+=1
         print(ugly_list[-1])
 
-class Solution(object):
+class Solution1(object):
     def findUglyNum(self, k):
         num=1
         while k>0:
@@ -49,6 +49,6 @@ class Solution(object):
         return num==1
 
 if __name__ == "__main__":
-    s = Solution1()
+    s = Solution2()
     k = 20
     s.findUglyNum(k)
