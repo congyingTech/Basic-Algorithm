@@ -5,8 +5,16 @@
 
 |  题目   | 描述  | 思路 | 归类 | 解题时间 |
 |  ----  | ----  | ---- | ---- | ---- |
-| 16.reverse-linked-list  | 反转链表|三个指针:pre,cur,next |链表| 2020-1-31 |
-| 17.merge-two-sorted-array  | 合并两个排序的数组|选择一个有序数组进行拓展，给两个有序数组的尾部分别一个指针，比较尾部的大小，把大的插入到拓展数组的尾部 | 有序数组排序 | 2020-1-31 |
+|03.search-in-matrix|二维数组的查找|从右上角开始，右上角的值大于查找的数字则删除所在列，小于则删除所在的行，直到找到位置|数组|2020-2-10|
+|05.reverse-print-linkedlist|从尾到头打印链表|遍历一遍+stack|链表|2020-2-10|
+|06.rebuild-binary-tree|重建二叉树|根据前序和中序遍历结果重建|二叉树|2020-2-10|
+|08.trans-matrix-min|旋转数组的最小数字|二分搜索的方法，start，end，mid，如果start的值小于mid的值，说明start-mid之间是递增的数组，最小值在mid-end之间，如果start的值大于mid，说明mid处于后面的递增数组，而最小值就在start-mid之间|二分查找|2020-2-10|
+|10.one-times|二进制中1的个数|让n每次位与n-1，n-1相当于n左移动一位，相当于看除了第一位之外的1的个数，每次n=n&(n-1),count+=1那么直到n=0的时候，结束|位运算|2020-2-10|
+|13.delete-node-in-linkedlist|在O(1)时间删除链表的结点|将后一个结点的值复制给p，删除p.next结点|链表|2020-2-10|
+|14.odd-even|调整数组使奇数在前偶数在后|头尾双指针|双指针|2020-2-10|
+|15.k-num-in-linkedlist|链表中倒数第k个结点|快慢指针|双指针|2020-2-10|
+|16.reverse-linked-list  | 反转链表|三个指针:pre,cur,next |链表| 2020-1-31 |
+|17.merge-two-sorted-array  | 合并两个排序的数组|选择一个有序数组进行拓展，给两个有序数组的尾部分别一个指针，比较尾部的大小，把大的插入到拓展数组的尾部 | 有序数组排序 | 2020-1-31 |
 |17.merge-two-sorted-lists|合并两个排序的链表|比较第一个元素，小的为主链表，另一个为次链表，主链表两个指针，次链表一个指针，遍历次链表，插入到主链表|有序链表排序| 2020-1-31 |
 |18.subtree-of-another-tree|判断B是不是A的子树|递归的方法，判断两个树匹配的必要条件是:A.val==B.val and match(A.left, B.left) and match(A.right, B.right)，判断B是不是A的子树的条件是：全匹配match(A,B) or match(A.left, B) or match(A.right,B)|二叉树|2020-1-31 |
 |19.mirror-binary-tree|镜像二叉树|1)就地镜像：root.left, root.right = root.right, root.left; mirror(root.left); mirrot(root.right)  2)创建节点镜像：newTree=TreeNode(root.val);newTree.left = mirror(root.right);newTree.right = mirror(root.left)|二叉树|2020-1-31 |
