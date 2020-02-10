@@ -23,7 +23,7 @@
 |[24.afterorder-level-tree-bst](https://github.com/congyingTech/Basic-Algorithm/blob/master/getOffer/24.afterorder-level-tree-bst.py)|根据后序遍历数组判断是不是二叉搜索树|后序遍历根左右，二叉搜索树根左<根<根右|二叉树遍历|2020-1-31 |
 |[26.copy-random-linkedlist](https://github.com/congyingTech/Basic-Algorithm/blob/master/getOffer/26.copy-random-linkedlist.py)|拷贝复杂链表|1)原复杂链表主体复制 2)复制复杂链表的灵活指针 3)把复制的链表从原链表脱离|链表|2020-2-2|
 |[27.bst-linkedlist-transfer](https://github.com/congyingTech/Basic-Algorithm/blob/master/getOffer/27.bst-linkedlist-transfer.py)|将bst树转化成有序的双向链表|递归的方法就左根右的遍历:左子树调整；调整左子树与根的关系；右子树调整|双向链表和树|2020-2-2|
-|[28.permutation](https://github.com/congyingTech/Basic-Algorithm/blob/master/getOffer/28.permutation.py|字符串全排列|回溯的思想|回溯|2020-2-2|
+|[28.permutation](https://github.com/congyingTech/Basic-Algorithm/blob/master/getOffer/28.permutation.py)|字符串全排列|回溯的思想|回溯|2020-2-2|
 |[29.times-pass-half-of-all](https://github.com/congyingTech/Basic-Algorithm/blob/master/getOffer/29.times-pass-half-of-all.py)|出现过半数以上的num|摩尔投票法：times=1，遍历num，如果出现的话times+1，不出现的话times-1，如果是times==0的话，当前数字为新的比较数字，times重置为1，直到最后的那个数字|快排+数学|2020-2-2|
 |[30.min-k-nums](https://github.com/congyingTech/Basic-Algorithm/blob/master/getOffer/30.min-k-nums.py)|找出k个小的数|利用最小堆的方法，每次建堆找出当前最小的元素，直到k次，时间复杂度是O(nlogk)|堆|2020-2-4|
 |[31.max-contiunus-arr-sum](https://github.com/congyingTech/Basic-Algorithm/blob/master/getOffer/31.max-contiunus-arr-sum.py)|连续子数组的最大和|dp[i]表示以i为连续数组最后一个元素的最大的和，dp[i] = max(dp[i-1]+num[i], num[i])|动态规划|2020-2-4|
