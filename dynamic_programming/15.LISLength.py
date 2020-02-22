@@ -17,14 +17,38 @@ class Solution(object):
         res = [1]*arr_len
         for i in range(1, arr_len):
             for j in range(i):
-                if nums[i]<nums[j]:
+                if nums[i]>nums[j]:
                     res[i] = max(res[i], res[j]+1)
         return max(res)
 
+    def listOfLIS(self, nums):
+        """
+        求出最长上升子序列是什么？（boss直聘一面算法题）
+        """
+        n = len(nums)
+        m = [0]*n
+        for x in range(n-2,-1,-1):
+            for y in range(n-1,x,-1):
+                if nums[x] < nums[y] and m[x] <= m[y]:
+                    m[x] += 1
+            max_value = max(m)
+            result = []
+            for i in range(n):
+                if m[i] == max_value:
+                    result.append(nums[i])
+                    max_value -= 1
+        return result
+
+
+    def findNumberOfLIS(self, nums):
+        """
+        求最长上升子序列的个数
+        """
+        pass
 
 if __name__ == "__main__":
     s = Solution()
-    arr = [-2,-1]
-    print(s.lengthOfLIS(arr))
+    arr = [10, 22, 9, 33, 21, 50, 41, 60, 80]
+    print(s.listOfLIS(arr))
 
 
