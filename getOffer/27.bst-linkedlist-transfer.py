@@ -18,12 +18,12 @@ class Solution1(object):
     def transfer(self, root):
         if not root:
             return 
-        # 整理左子树
+        # 整理好的左子树
         self.transfer(root.left)
         if self.head==None and self.tail == None:
             self.head, self.tail = root, root
         else:
-            # 将self.tail与根节点双向链接
+            # 将self.tail与根节点双向链接，且self.tail向后移动一步，A->B 双向链接后，A指向B
             self.tail.right = root
             root.left = self.tail
             self.tail = self.tail.right
