@@ -37,6 +37,48 @@ def get_least_numbers_3(array, k):
 
     return map(lambda x:-x, max_heap)
 
+class Solution(object):
+    
+    def getMinKnums(self, nums, k):
+        """
+        快排的方法
+        """
+        nums, pivot_index = self.partition(0, len(nums), nums)
+        if pivot_index==k:
+            return nums[:k]
+        mid = ()
+        while k != mid:
+            # if k>
+            pass
+            
+        
+        
+    def partition(self, start, end, nums):
+        pivot = nums[start]
+        i, j = start, end
+        while i!=j:
+            while i<j and nums[i]<=pivot:
+                i+=1
+            while i<j and nums[j]>=pivot:
+                j-=1
+            if i < j:
+                temp = nums[i]
+                nums[i] = nums[j]
+                nums[j] = temp
+        nums[start] = nums[i]
+        nums[i] = pivot
+        return nums, i
+         
+
+    def getMinKnums1(self, nums, k):
+        """
+        堆的方法
+        """
+        pass
+
+
+
+
 if __name__ == "__main__":
     array = [4,5,1,6,2,7,3,8]
     k = 4

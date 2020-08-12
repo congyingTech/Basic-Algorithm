@@ -1,4 +1,8 @@
-# Definition for a binary tree node.
+# encoding:utf-8
+"""
+待补充二叉树的三种遍历的递归和非递归的解法
+"""
+
 class TreeNode(object):
     def __init__(self, x):
         self.val = x
