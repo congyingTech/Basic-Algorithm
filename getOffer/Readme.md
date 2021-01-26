@@ -60,4 +60,4 @@
 |[\*65.sliding-window-maximum](https://github.com/congyingTech/Basic-Algorithm/blob/master/getOffer/65.sliding-window-maximum.py)|滑动窗口的最大值|双端队列保存最大值和次大值|双端队列|2020-2-10|
 |[66.matrix-path](https://github.com/congyingTech/Basic-Algorithm/blob/master/getOffer/66.matrix-path.py)|矩阵中的路径|判断一个路径是否存在在矩阵中，可以用回溯法|回溯法|2020-2-10|
 |[\*67.robot-fields](https://github.com/congyingTech/Basic-Algorithm/blob/master/getOffer/67.robot-fields.py)|机器人运动范围|寻找机器人可以活动的board|回溯法|2020-2-10|
-
+|[68.max-profit]()|股票的最大利润|一次遍历，假设在最低点买入，价格minPrice=inf，那么maxProfit=cur_price-minPrice(if minPrice<cur_price else minPrice=cur_price)|技巧题|2021-1-26|
