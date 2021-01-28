@@ -47,20 +47,26 @@ class Solution(object):
         n = len(s)
         dp = [[False]*n for _ in range(n)]
         dp[0][0] = True
-
+        max_gap_ind = [0, 0]
+        # cababaad
         for i in range(n):
             for j in range(i, n):
                 if j > i+2:
                     dp[i][j] = dp[i+1][j-1] and s[i] == s[j]
                 elif i < j <= i+2:
-                    dp[i][j] = s[i]==s[j]
-                else:
+                    dp[i][j] = s[i] == s[j]
+                elif i == j:
                     dp[i][j] = True
-
+                if dp[i][j]:
+                    max_gap = max_gap_ind[1] - max_gap_ind[0]
+                    if j-i > max_gap:
+                        max_gap_ind[0] = i
+                        max_gap_ind[1] = j
+        return s[max_gap_ind[0]: max_gap_ind[1]-1]
 
 
 if __name__ == "__main__":
     s = Solution()
-    s = "babad"
-    print(s.longestPalindrome(s))
+    st = "cababaad"
+    print(s.longestPalindrome(st))
 
