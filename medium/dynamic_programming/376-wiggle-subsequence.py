@@ -19,10 +19,20 @@
 
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/wiggle-subsequence
-dp的思想：
-dp[i]表示第i个元素时最长的摆动序列，
-dp[i] = dp[k] + 1 if s[i] - s[k]
 
+dp的思想：
+定义up和down两种状态：
+up[i]表示第i个元素的前一个gap是上升的摆动序列
+down[i]表示第i个元素的前一个gap是下降的摆动序列
+当nums[i] >= nums[i-1]时，i之前的这个gap为上升
+down[i]只能是down[i-1]，因为前一个gap是上升
+up[i]可以是up[i-1]或者down[i-1]+1
+所以状态转移公式：
+up[i] = up[i-1] if nums[i]<=nums[i-1]
+up[i] = max(up[i-1], down[i-1]+1) if nums[i]>nums[i-1]
+down[i] = down[i-1] if nums[i]>=nums[i-1]
+down[i] = max(down[i-1], up[i-1]+1) if nums[i]<nums[i-1]
+max_len = max(up[i], down[i])
 """
 
 
@@ -32,12 +42,33 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        pass
+        if not nums:
+            return 0
+        n = len(nums)
+        if n == 1:
+            return 1
+        up = [0]*n
+        up[0] = 1
+        down = [0]*n
+        down[0] = 1
+        max_len = 0
+        for i in range(1, n):
+            if nums[i] < nums[i-1]:
+                up[i] = up[i-1]
+                down[i] = max(down[i-1], up[i-1]+1)
+            elif nums[i] > nums[i-1]:
+                up[i] = max(up[i-1], down[i-1]+1)
+                down[i] = down[i-1]
+            else:
+                up[i] = up[i-1]
+                down[i] = down[i-1]
+            max_len = max(up[i], down[i])
+        return max_len
 
 
 if __name__ == "__main__":
     s = Solution()
-    nums = [1,7,4,9,2,5]
+    nums = [1, 1]
     print(s.wiggleMaxLength(nums))
 
 
