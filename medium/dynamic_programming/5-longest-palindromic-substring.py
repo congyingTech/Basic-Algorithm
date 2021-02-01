@@ -34,15 +34,18 @@ dp[i][j]表示从i到j是否是最长回文子串,那么需要i+1:j-1是回文�
 dp[i][j] = dp[i+1][j-1] and s[i]==s[j] j>i+2时
 dp[i][j] = s[i]==s[j] i<j<=i+2时
 dp[i][j] = 1 i=j时
+双重循环，外层循环为最长回文子串的长度。
 
 """
 
 
 class Solution(object):
-    def longestPalindrome(self, s):
+    def longestPalindrome1(self, s):
         """
         :type s: str
         :rtype: str
+        错误的解法：
+        bug的关键在于无法在i时刻，提前知道dp[i+1]的正确状态。
         """
         n = len(s)
         dp = [[False]*n for _ in range(n)]
@@ -64,9 +67,29 @@ class Solution(object):
                         max_gap_ind[1] = j
         return s[max_gap_ind[0]: max_gap_ind[1]-1]
 
+    def longestPalindrome(self, s):
+
+        n = len(s)
+        dp = [[False]*n for _ in range(n)]
+        ans = ""
+        for l in range(n):
+            for i in range(n):
+                j = i+l
+                if j >= n:
+                    break
+                if l >= 2:
+                    dp[i][j] = dp[i+1][j-1] and s[i] == s[j]
+                elif 0 < l < 2:
+                    dp[i][j] = s[i] == s[j]
+                elif l == 0:
+                    dp[i][j] = True
+                if dp[i][j] and l+1 > len(ans):
+                    ans = s[i:j+1]
+        return ans
+
 
 if __name__ == "__main__":
     s = Solution()
-    st = "cababaad"
+    st = "babaad"
     print(s.longestPalindrome(st))
 
