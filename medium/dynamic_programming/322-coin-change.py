@@ -3,8 +3,6 @@
 
 你可以认为每种硬币的数量是无限的。
 
- 
-
 示例 1：
 
 输入：coins = [1, 2, 5], amount = 11
@@ -15,11 +13,13 @@
 链接：https://leetcode-cn.com/problems/coin-change
 
 解题思路：
+硬币的数量是无限的决定了该问题是完全背包问题。
+
 xi是面值为ci的硬币的数量，i是面值的下标
 min(∑x(i))
 约束条件：x(i)*c(i) <= S
 dp[S]表示组成S金额的最少的硬币数
-dp[S] = dp[S-c(i)] + 1 0<=i<3
+dp[S] = min(dp[S], dp[S-c(i)] + 1) 0<=i<3
 """
 
 
@@ -30,11 +30,16 @@ class Solution(object):
         :type amount: int
         :rtype: int
         """
-        pass
+        dp = [float('inf')]*(amount+1)
+        dp[0] = 0
+        for coin in coins:
+            for x in range(coin, amount+1):
+                dp[x] = min(dp[x], dp[x-coin] + 1)
+        return dp[amount] if dp[amount] != float('inf') else -1
 
 
 if __name__ == "__main__":
     s = Solution()
-    coins = []
-    amount = 0
-    s.coinChange(coins, amount)
+    coins = [1, 2, 5]
+    amount = 11
+    print(s.coinChange(coins, amount))
