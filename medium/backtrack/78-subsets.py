@@ -18,6 +18,11 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/subsets
 
+解题思路：
+【子集问题特点】
+1.元素不要求有序，所以是index+1
+2.子集合的每一个元素不可以重复，所以是执行+1操作
+
 """
 
 
@@ -77,7 +82,7 @@ class Solution(object):
 
 
 if __name__ == "__main__":
-    nums = [1, 2, 3]
+    nums = [1, 4, 3]
     s = Solution()
     res = s.subsets(nums)
     print(res)

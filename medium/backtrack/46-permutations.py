@@ -34,7 +34,7 @@ class Solution(object):
                 return
             for index in range(pos, n):
                 # nums分为左右两部分，动态维护
-                nums[pos], nums[index] = nums[index], nums[index]
+                nums[pos], nums[index] = nums[index], nums[pos]
                 backtrack(pos + 1)
                 # 回溯
                 nums[pos], nums[index] = nums[index], nums[pos]
