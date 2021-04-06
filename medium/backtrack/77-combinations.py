@@ -22,21 +22,19 @@
 class Solution1(object):
     def combine(self, n, k):
         """
-        超时的代码
         :type n: int
         :type k: int
         :rtype: List[List[int]]
         """
-        def backtrack(index, temp):
+        def backtrack(pos, temp):
             # 回溯结束的条件
-            if len(temp) == k and sorted(temp[:]) not in res:
-                res.append(sorted(temp[:]))
+            if len(temp) == k:
+                res.append(temp[:])
                 return
-            for i in range(index, n+1):
-                if i not in temp:
-                    temp.append(i)
-                    backtrack(index+1, temp[:])
-                    temp.pop()
+            for index in range(pos, n+1):
+                temp.append(index)
+                backtrack(index+1, temp[:])
+                temp.pop()
 
         res = []
         backtrack(1, [])
@@ -59,7 +57,8 @@ class Solution2(object):
 
 
 if __name__ == "__main__":
-    s = Solution2()
+    s = Solution1()
     n = 4
     k = 2
+    # 相较于40题，之所以不用排序，是因为本来从1到n就是一个有序的无重复序列。
     s.combine(n, k)

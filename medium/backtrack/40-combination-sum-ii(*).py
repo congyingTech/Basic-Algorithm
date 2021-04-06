@@ -20,6 +20,10 @@ candidates 中的每个数字在每个组合中只能使用一次。
 
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/combination-sum-ii
+
+去掉重复的两种方法：
+1）hash表去重；
+2）对无序的序列进行排序。（这种方法比较简单）
 """
 
 
@@ -33,19 +37,22 @@ class Solution(object):
         """
 
         def backtrack(pos, temp):
-            if sorted(temp[:]) not in res and sum(sorted(temp[:])) == target:
-                res.append(sorted(temp[:]))
+            if sum(temp[:]) == target and temp[:] not in res:
+                res.append(temp[:])
                 return
             for index in range(pos, n):
                 if sum(temp[:]) < target:
                     temp.append(candidates[index])
-                    backtrack(index+1, temp)
+                    backtrack(index+1, temp[:])
                     temp.pop()
+                else:
+                    break
 
         res = []
         n = len(candidates)
+        # 如果没有排序的话，print的结果就会有重复。
+        candidates = sorted(candidates)
         backtrack(0, [])
-        print(res)
         return res
 
 
@@ -81,7 +88,7 @@ class Solution2(object):
 
 
 if __name__ == "__main__":
-    s = Solution2()
+    s = Solution()
     candidates = [10, 1, 2, 7, 6, 1, 5]
     target = 8
     print(s.combinationSum2(candidates, target))

@@ -22,6 +22,7 @@
 【子集问题特点】
 1.元素不要求有序，所以是index+1
 2.子集合的每一个元素不可以重复，所以是执行+1操作
+3.输入的元素互不相同，不需要去重操作
 
 """
 
@@ -38,17 +39,19 @@ class Solution1(object):
         res = []
         n = len(nums)
 
-        def backtrack(index, temp):
+        def backtrack(pos, temp):
             # inner_temp = sorted(temp).copy()
             # [:]和copy同样是浅拷贝，浅拷贝是引用，原有的对象进行增删改的时候，拷贝后的对象也会随之变化；深拷贝是拷贝子对象和父对象，原有的对象变化，不会产生变化。
-            if sorted(temp[:]) not in res:
-                res.append(sorted(temp[:]))
+            # if sorted(temp[:]) not in res:
+            #     res.append(sorted(temp[:]))
+            if temp[:] not in res:
+                res.append(temp[:])
             # if index == n:
             #     return
-            for i in range(n):
-                if nums[i] not in temp:
-                    temp.append(nums[i])
-                    backtrack(index+1, temp)
+            for index in range(pos, n):
+                if nums[index] not in temp:
+                    temp.append(nums[index])
+                    backtrack(index+1, temp[:])
                     temp.pop()
         backtrack(0, [])
         return res
@@ -82,7 +85,8 @@ class Solution(object):
 
 
 if __name__ == "__main__":
-    nums = [1, 4, 3]
-    s = Solution()
+    nums = [4, 3, 2, 1]
+    s = Solution1()
+    # 相较于40题，之所以不用排序，是因为输入元素无重复。
     res = s.subsets(nums)
     print(res)
