@@ -21,7 +21,7 @@
 
 
 class Solution(object):
-    def permute(self, nums):
+    def permuteUnique(self, nums):
         """
         :type nums: List[int]
         :rtype: List[List[int]]
@@ -46,7 +46,31 @@ class Solution(object):
         return res
 
 
+class Solution1(object):
+    def permuteUnique(self, nums):
+        res = []
+        n = len(nums)
+        used = [False for _ in range(n)]
+
+        def backtrack(pos, temp):
+            if len(temp[:]) == n and temp[:] not in res:
+                res.append(temp[:])
+                return
+            for index in range(0, n):
+                if not used[index]:
+                    temp.append(nums[index])
+                    used[index] = True
+                    backtrack(pos+1, temp[:])
+                    temp.pop()
+                    used[index] = False
+                else:
+                    continue
+
+        backtrack(0, [])
+        return res
+
+
 if __name__ == "__main__":
-    s = Solution()
+    s = Solution1()
     nums = [1, 5, 1]
-    print(s.permute(nums))
+    print(s.permuteUnique(nums))

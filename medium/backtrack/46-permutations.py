@@ -44,7 +44,32 @@ class Solution(object):
         return res
 
 
+class Solution1(object):
+    def permute(self, nums):
+        res = []
+        n = len(nums)
+        # 用来记录元素是否被使用过，十分关键
+        used = [False for _ in range(n)]
+
+        def backtrack(pos, temp):
+            if len(temp[:]) == n:
+                res.append(temp[:])
+                return
+            for index in range(0, n):
+                if not used[index]:
+                    temp.append(nums[index])
+                    used[index] = True
+                    backtrack(pos+1, temp[:])
+                    temp.pop()
+                    used[index] = False
+                else:
+                    continue
+
+        backtrack(0, [])
+        return res
+
+
 if __name__ == "__main__":
-    s = Solution()
+    s = Solution1()
     nums = ['A', 'B', 'C']
     print(s.permute(nums))
