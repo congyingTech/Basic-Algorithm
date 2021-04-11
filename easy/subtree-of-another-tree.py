@@ -14,7 +14,7 @@ t= 4
 判断的条件是: s.val == t.val and self.isMatch(s.left, t.left) and self.isMatch(s.right, t.right)
 或者判断s的子树（左右）是否和t一致
 """
-# Definition for a binary tree node.
+# Definition for a binary binary_tree node.
 
 class TreeNode(object):
     def __init__(self, x):

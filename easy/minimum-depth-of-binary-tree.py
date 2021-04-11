@@ -1,5 +1,5 @@
 #coding:utf-8
-# Definition for a binary tree node.
+# Definition for a binary binary_tree node.
 class TreeNode(object):
     def __init__(self, x):
         self.val = x

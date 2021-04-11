@@ -1,5 +1,5 @@
 # encoding:utf-8
-# Definition for a binary tree node.
+# Definition for a binary binary_tree node.
 # 问题描述：寻找到二叉搜索树的和值都大的root
 class TreeNode(object):
     def __init__(self, x):

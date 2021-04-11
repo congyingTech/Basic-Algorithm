@@ -1,4 +1,4 @@
-# Definition for a binary tree node.
+# Definition for a binary binary_tree node.
 #寻找每一层的平均值
 class TreeNode(object):
     def __init__(self, x):

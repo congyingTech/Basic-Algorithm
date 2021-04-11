@@ -1,5 +1,5 @@
 # encoding:utf-8
-# Definition for a binary tree node.
+# Definition for a binary binary_tree node.
     #     4
     #    / \
     #   2   7

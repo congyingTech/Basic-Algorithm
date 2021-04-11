@@ -7,7 +7,7 @@
 递归的思路，左右子树都是满二叉树，其中x个点构成左子树，y=N-1-x个点构成右子树
 其中memory_dict = {0:[], 1:[TreeNode(0)]}是记录有N个结点可以构成的子树的结构，以时间换空间的做法。
 """
-# Definition for a binary tree node.
+# Definition for a binary binary_tree node.
 class TreeNode(object):
     def __init__(self, x):
         self.val = x

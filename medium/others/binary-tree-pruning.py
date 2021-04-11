@@ -3,7 +3,7 @@
 问题描述：对子树的结点中不含有1的结点进行剪枝
 解决方法：递归的方法，递归判断左右子树是否含有1
 """
-# Definition for a binary tree node.
+# Definition for a binary binary_tree node.
 class TreeNode(object):
     def __init__(self, x):
         self.val = x

@@ -1,4 +1,4 @@
-# Definition for a binary tree node.
+# Definition for a binary binary_tree node.
 #应该考虑层序遍历，把每一层的节点值逆置
 from platform import node
 class TreeNode(object):

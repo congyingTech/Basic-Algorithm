@@ -1,5 +1,5 @@
 # encoding:utf-8
-# Definition for a binary tree node.
+# Definition for a binary binary_tree node.
 """
 二叉查找树的中序遍历是有序的，所以可以根据中序遍历和已知的前序遍历确认一颗二叉查找树
 output是层序遍历
