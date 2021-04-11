@@ -70,14 +70,13 @@ class Solution(object):
                 if used[index]:
                     continue
                 # 如果pos层该分支的结点的数量小于k的数量，说明k在右边的分支，所以这条分支剪掉，并继续下一个pos
-                # 这个剪枝一定在上面剪枝的后面
                 if cnt < k:
                     k -= cnt
                     continue
 
-
                 temp.append(index)
                 used[index] = True
+                # 之前无法通过是因为pos+1写成index+1了，排列的问题还是pos+1的
                 backtrack(pos+1, temp, k)
                 # 这里不必再回溯，因为可以通过阶乘确定位置了
                 # used[index] = False
