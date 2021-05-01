@@ -9,6 +9,8 @@ mine思路1）如果是二叉树的话，可以遍历树，并保存一个dict{�
 思路3）如果是二叉搜索树，那么可以根据二叉搜索树的性质：如果根的权值处于 node1 和 node2 之间,则根就是它们的最低公共祖先结点如果根的权值比 node1 和 node2 都大,则它们的最低公共祖先结点在根的左子树中如果根的权值比 node1 和 node2 都小,则它们的最低公共祖先结点在根的右子树中
 思路4）如果是普通二叉树，且没有结点指向父节点，那么可以用两个链表保存从根到该结点的链表的路径，转换成求两个链表的最后公共结点。
 """
+
+
 class TreeNode(object):
     def __init__(self, val):
         self.val = val
@@ -20,6 +22,7 @@ class Solution1(object):
     # 树是普通的二叉树，用递归的思路解决
     def __init__(self):
         self.ans = None
+
     def lowestCommonAncestor(self, root, p, q):
         """
         :type root: TreeNode
@@ -27,25 +30,27 @@ class Solution1(object):
         :type q: TreeNode
         :rtype: TreeNode
         """
+
         def recurveFindCommon(root, p, q):
             if not root:
                 return False
             left = recurveFindCommon(root.left, p, q)
             right = recurveFindCommon(root.right, p, q)
-            mid = root is p or root is q # mid是p或者q中的一个
-            if left + right + mid >=2:
+            mid = root is p or root is q  # mid是p或者q中的一个
+            if left + right + mid >= 2:
                 self.ans = root
 
-            return mid or left or right # mid或者left或right中有一个是True的，那么回溯到上一层就可以改变为True
-            
-        recurveFindCommon(root, p, q)   
+            return mid or left or right  # mid或者left或right中有一个是True的，那么回溯到上一层就可以改变为True
+
+        recurveFindCommon(root, p, q)
         return self.ans
 
+
 class Solution2(object):
-    # 树是普通二叉树，用非递归+dict
+    # 树是普通二叉树，用非递归dfs+dict
     def lowestCommonAncestor(self, root, p, q):
-        dic = {root:None}
-        
+        dic = {root: None}
+
         records = [root]
         while root:
             if root.left and root.left not in dic:
@@ -68,13 +73,14 @@ class Solution2(object):
         while q not in ancestor:
             q = dic[q]
         return q
-        
+
+
 class Solution3(object):
     # 二叉树是BST树：当前遍历到的结点比p和q都大，那么pq的最近公共结点一定在左子树，如果比p大比q小，那么当前就是最近公共结点
     def lowestCommonAncestor(self, root, p, q):
-        if root.val>q.val and root.val>p.val:
+        if root.val > q.val and root.val > p.val:
             return self.lowestCommonAncestor(root.left, p, q)
-        elif root.val<p.val and root.val<q.val:
+        elif root.val < p.val and root.val < q.val:
             return self.lowestCommonAncestor(root.left, p, q)
         else:
             return root

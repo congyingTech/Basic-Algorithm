@@ -1,4 +1,4 @@
-# encoding:utf-8
+ # encoding:utf-8
 """
 问题描述：二叉搜索树与双向链表，二叉搜索树转化成一个排序的双向链表
 解决方案：
@@ -11,19 +11,23 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
+
 class Solution1(object):
     def __init__(self):
         self.head = None
         self.tail = None
+
     def transfer(self, root):
         if not root:
             return 
         # 整理好的左子树
         self.transfer(root.left)
-        if self.head==None and self.tail == None:
+        # head和tail是指向root的两个指针
+        if self.head == None and self.tail == None:
             self.head, self.tail = root, root
         else:
-            # 将self.tail与根节点双向链接，且self.tail向后移动一步，A->B 双向链接后，A指向B
+            # head指针是不能移动的，用于返回结果
+            # tail进行移动，先把tail的右指针指向下一个节点，下一个节点的左指针指向tail，建立双链，然后tail移动下一步。
             self.tail.right = root
             root.left = self.tail
             self.tail = self.tail.right
