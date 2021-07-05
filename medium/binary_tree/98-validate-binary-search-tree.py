@@ -20,7 +20,20 @@ class Solution(object):
         :type root: TreeNode
         :rtype: bool
         """
-        pass
+        lower = -float('inf')
+        upper = float('inf')
+
+        def helper(root, lower, upper):
+
+            val = root.val
+            if val <= lower or val >= upper:
+                return False
+            if not helper(root.left, lower, val):
+                return False
+            if not helper(root.right, val, lower):
+                return False
+            return True
+        return helper(root, lower, upper)
 
 
 if __name__ == "__main__":
@@ -30,4 +43,4 @@ if __name__ == "__main__":
     root.right = TreeNode(3)
     root.left.left = TreeNode(4)
     root.left.right = TreeNode(5)
-    s.isValidBST(root)
+    print(s.isValidBST(root))

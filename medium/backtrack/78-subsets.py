@@ -87,6 +87,6 @@ class Solution(object):
 if __name__ == "__main__":
     nums = [4, 3, 2, 1]
     s = Solution1()
-    # 相较于40题，之所以不用排序，是因为输入元素无重复。
+    # 相较于78题，之所以不用排序，是因为输入元素无重复。
     res = s.subsets(nums)
     print(res)
