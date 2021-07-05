@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2021/4/29 10:40 上午
 # @Author  : Mohn
-# @FileName: 104.maximum-depth-of-binary-tree.py
+# @FileName: 104-maximum-depth-of-binary-tree.py
 """
 求二叉树的最大的深度
 """

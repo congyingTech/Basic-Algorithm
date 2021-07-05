@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2021/5/6 2:44 下午
 # @Author  : Mohn
-# @FileName: 145.py
+# @FileName: 145-binary-tree-postorder-traversal.py
 """
 二叉树后序遍历
 """
@@ -34,6 +34,8 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
+        if not root:
+            return []
         stack = [root]
         res = []
         while stack:
@@ -43,8 +45,10 @@ class Solution(object):
                 stack.append(node.left)
             if node.right:
                 stack.append(node.right)
+        res_val = []
         while res:
-            print(res.pop().val)
+            res_val.append(res.pop().val)
+        return res_val
 
 
 if __name__ == "__main__":
