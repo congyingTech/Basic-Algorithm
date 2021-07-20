@@ -17,6 +17,9 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/sum-root-to-leaf-numbers
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+根左右框架
+当前节点代表的值=10*上一层节点+当前节点的值
 """
 
 
@@ -26,36 +29,37 @@ class TreeNode(object):
         self.val = val
         self.left = left
         self.right = right
+
+
 class Solution(object):
     def sumNumbers(self, root):
         """
         :type root: TreeNode
         :rtype: int
         """
+        def dfs(root, prevTotal):
+            if not root:
+                return 0
+            # 根
+            total = 10*prevTotal+root.val
+            if not root.left and not root.right:
+                return total
+
+            return dfs(root.left, total) + dfs(root.right, total)
+
+        return dfs(root, 0)
+
 
     def preOrderTraversal(self, root):
-        stack = [root]
-        stack_val = [root.val]
+        sta = [root]
         res = []
-        final = []
-        while stack:
-            cur = stack.pop()
-            stack_val.pop()
+        while sta:
+            cur = sta.pop()
             res.append(cur.val)
             if cur.right:
-                stack.append(cur.right)
-                stack_val.append(cur.right.val)
+                sta.append(cur.right)
             if cur.left:
-                stack.append(cur.left)
-                stack_val.append(cur.left.val)
-
-            if not cur.left and not cur.right:
-                final.append(res[:])
-                res.pop()
-            if not cur.left or not cur.
-
-        print(final)
-
+                sta.append(cur.left)
         return res
 
 
