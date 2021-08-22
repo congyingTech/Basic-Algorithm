@@ -20,16 +20,33 @@
 """
 
 
-
-
-class Solution(object):
+class Solution:
     def findKthLargest(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        # write code here
+        left = 0
+        right = len(nums) - 1
+        self.quickSort(nums, left, right)
+        return nums[-k]
 
+    def quickSort(self, a, left, right):
+        if left > right:
+            return
+        pivot = a[left]
+        i, j = left, right
+        while i != j:
+            while i < j and a[j] >= pivot:
+                j -= 1
+            while i < j and a[i] <= pivot:
+                i += 1
+            if i < j:
+                temp = a[i]
+                a[i] = a[j]
+                a[j] = temp
+
+        a[left] = a[i]
+        a[i] = pivot
+        self.quickSort(a, left, i - 1)
+        self.quickSort(a, i + 1, right)
 
 
 if __name__ == "__main__":

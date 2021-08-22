@@ -44,6 +44,7 @@ class Solution1(object):
             print(head.val)
             head = head.left
 
+
 class Solution2(object):
     def transfer(self, root):
         stack = [root]
@@ -73,12 +74,11 @@ class Solution2(object):
 
 if __name__ == "__main__":
     s = Solution1()
-    root = TreeNode(3)
-    root.left = TreeNode(1)
+    root = TreeNode(4)
+    root.left = TreeNode(2)
     root.right = TreeNode(5)
-    root.left.left = TreeNode(0)
-    root.left.right = TreeNode(2)
-    root.right.left = TreeNode(4)
-    root.right.right = TreeNode(6)
+    root.left.left = TreeNode(1)
+    root.left.right = TreeNode(3)
+
     head = s.transfer(root)
     s.printList(head)

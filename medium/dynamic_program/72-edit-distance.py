@@ -3,21 +3,23 @@
 """
 @author:Mohn
 @email:wangcongyinga@gmail.com
-@time: 2021-07-11 23:51
-给你两个单词 word1 和 word2，请你计算出将 word1 转换成 word2 所使用的最少操作数 。
+@time: 2021-08-14 10:43
 
-你可以对一个单词进行如下三种操作：
+对于A，B操作可以归为几种：
+1）B插入——dp[i-1][j]+1
+2）A插入——dp[i][j-1]+1
+3）修改A
 
-插入一个字符
-删除一个字符
-替换一个字符
+dp[i][j]表示i长度的A和j长度的B的编辑距离
+当S[i] == S[j]时：
+   dp[i][j] = min(dp[i-1][j]+1, dp[i][j-1]+1, dp[i-1]dp[j-1])
 
-来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/edit-distance
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+当S[i] != S[j]时：
+   dp[i][j] = min(dp[i-1][j]+1, dp[i][j-1]+1, dp[i-1]dp[j-1]+1)
 
+而且要注意边界条件
 
-
+tips:当i和j表示一段长度的时候，那么i的最大值是m+1，j的最大值是n+1
 """
 
 

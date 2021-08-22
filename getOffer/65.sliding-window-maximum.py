@@ -35,6 +35,6 @@ class Solution(object):
 
 if __name__ == "__main__":
     s = Solution()
-    nums = [2,3,4,2,6,2,5,1]
+    nums = [1,3,-1,-3,5,3,6,7]
     k = 3
-    s.maxSlidingWindow(nums, k)
+    print(s.maxSlidingWindow(nums, k))
