@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2021/9/13 7:33 下午
 # @Author  : Mohn
-# @FileName: 560-subarray-sum-equals-k.py
+# @FileName: *560-subarray-sum-equals-k.py
 """
 给你一个整数数组 nums 和一个整数 k ，请你统计并返回该数组中和为 k 的连续子数组的个数。
 pre[i]代表第i位的前缀和,
