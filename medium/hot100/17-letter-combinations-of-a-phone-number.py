@@ -39,5 +39,5 @@ class Solution(object):
 if __name__ == "__main__":
     s = Solution()
     # digits的长度0-4
-    digits = ""
+    digits = "9264"
     print(s.letterCombinations(digits))
