@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2021/9/14 11:02 上午
 # @Author  : Mohn
-# @FileName: 76-minimum-window-substring.py
+# @FileName: x76-minimum-window-substring.py
 """
 76. 最小覆盖子串
 给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 "" 。
@@ -9,6 +9,8 @@
 滑动窗口：
 l/r指针滑动窗口的方法: r一直往右移动，直到t在s中，停止移动。这时候l向右移动，直到t不在s中。
 和getOffer/65题一样都是滑动窗口的方法。
+
+问题：算法超时。牺牲内存空间优化？？？
 """
 
 
