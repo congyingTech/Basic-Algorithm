@@ -4,6 +4,8 @@
 # @FileName: 104-maximum-depth-of-binary-tree.py
 """
 求二叉树的最大的深度
+
+两种方法：回溯和动归的思想
 """
 
 
